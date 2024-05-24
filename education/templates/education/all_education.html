@@ -1,0 +1,43 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Education Section -->
+<div id="education-page-content" class="hidden">
+    <form id="csrf-token-container">
+         {% csrf_token %}
+    </form>
+    <h3 class="page-heading">Education</h3>
+
+    <div class="education-section-horizontal-bar">
+        {% for education in all_education %}
+        <div class="education-section-item">
+            <div class="education-section-item-square"></div>
+            <p class="education-section-item-heading">{{ education.title }}</p>
+            <p class="education-section-item-year">{{ education.year }}</p>
+            <p class="education-section-item-description">{{ education.content }}</p>
+            <a onclick="educationDeleteConfirmation(event, {{education.id}})" class="crud-delete-btn hide">Delete</a>
+            <a href="{% url 'update-education-page' pk=education.pk %}" class="crud-edit-btn hide">Edit</a>
+        </div>
+        {% endfor %}
+        <div class="crud-page-contorl-button-container">
+        <a href="{% url 'create-education-page' %}"><img src="{% static 'icons/new_icon.svg' %}" class="crud-page-contorl-button"></a>
+        <img src="{% static 'icons/delete_icon.svg' %}" class="crud-page-contorl-button" onclick="toggle_all_btn('crud-delete-btn')">
+        <img src="{% static 'icons/edit_icon.svg' %}" class="crud-page-contorl-button" onclick="toggle_all_btn('crud-edit-btn')">
+        </div>
+    </div>
+</div>
+<script>
+    /*
+    These variables are needed in the JavaScript file "app.js" to initiate and confirm the deletion of an Education object.
+    Django does not support templating variables in standalone JavaScript files, therefore, variables from the server
+    must be rendered into script tags within the html file and then referenced in app.js.
+    */
+    /*
+    The educationDeleteUrl is spliced because the route requires a URL parameter and omitting a parameter will throw an error.
+    To solve this, we pass "1" to the "pk" it is expecting anf then spice the string to cut the parameter out.
+    */
+    let xBtn_url = "{% static 'icons/x_icon.svg' %}"
+    let educationDeleteUrl = "{% url 'delete-education-page' pk=1%}".slice(0, -2)
+</script>
+
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% load extras %}
+{% block content %}
+<div class="upload-image-page-content hidden">
+    {% for image_obj in all_images %}
+    <div class="single-image-details-container">
+        <img src="{{ image_obj.source.url }}" class="single-image-photo">
+
+        <div class="single-image-details">
+            <p>Purpose: {{ image_obj.purpose }}</p>
+            <p>Date Posted: {{ image_obj.date_posted }}</p>
+            <p class="img-url" tooltip="Click to Copy" onclick="navigator.clipboard.writeText('{{ image_obj.source.url | parse_aws_url }}')">Image URL: {{ image_obj.source.url | parse_aws_url }} </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="pagination">
+
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}" class="pagination-arrow-link"> <img src="{% static 'icons/previous-page.svg' %}" class="pagination-arrows"> </a>
+    {% endif %}
+
+    <span class="pagination-current-page">{{ page_obj.number }}</span>
+
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}" class="pagination-arrow-link"> <img src="{% static 'icons/next-page.svg' %}" class="pagination-arrows"> </a> </div>
+    {% endif %}
+
+</div>
+
+{% endblock content %}

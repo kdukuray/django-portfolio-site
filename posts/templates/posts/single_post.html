@@ -1,0 +1,37 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% load extras %}
+{% block content %}
+
+<div id="single-post-page-content" class="single-post-page-content">
+    <form id="csrf-token-container">
+        {% csrf_token %}
+    </form>
+
+    <h1>{{ post.title }}</h1>
+    {{ post.content | mdconverter | safe}}
+
+</div>
+{% if user.is_authenticated %}
+<div class="crud-page-contorl-button-container">
+                <a href="{% url 'create-post-page' %}"><img src="{% static 'icons/new_icon.svg' %}" class="crud-page-contorl-button"></a>
+                <a onclick="postDeleteConfirmation(event, {{post.id}})"><img src="{% static 'icons/delete_icon.svg' %}" class="crud-page-contorl-button"></a>
+                <a href="{% url 'update-post-page' pk=post.id %}"><img src="{% static 'icons/edit_icon.svg' %}" class="crud-page-contorl-button" ></a>
+</div>
+{% endif %}
+<script defer src="{% static 'javascript/showdown.js' %}"></script>
+<script defer>
+/*
+These variables are needed in the JavaScript file "app.js" to initiate and confirm the deletion of a Post object.
+Django does not support templating variables in standalone JavaScript files, therefore, variables from the server
+must be rendered into script tags within the html file and then referenced in app.js.
+*/
+let xBtn_url = "{% static 'icons/x_icon.svg' %}"
+/*
+The postDeleteUrl is spliced because the route requires a URL parameter and omitting a parameter will throw an error.
+To solve this, we pass "1" to the "pk" it is expecting anf then spice the string to cut the parameter out.
+*/
+let postDeleteUrl = "{% url 'delete-post-page' pk=1%}".slice(0, -2)
+</script>
+
+{% endblock content %}

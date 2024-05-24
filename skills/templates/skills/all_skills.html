@@ -1,0 +1,63 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+<div id="skills-page-content" class="skills-page-content hidden">
+    <form id="csrf-token-container">
+        {% csrf_token %}
+    </form>
+
+    <h3 class="page-heading">All Skills</h3>
+    <div class="skills-page-section-container">
+
+        <div class="skills-page-section">
+            <h4 class="skills-page-section-heading">Languages</h4>
+            <div class="skill-page-section-content">
+
+                {% for language in all_languages %}
+                <div class="individual-skill">
+                    <img src="{{ language.image.url }}" class="skill-logo">
+                    <p class="skill-name">{{ language.name }}</p>
+                    <a onclick="skillDeleteConfirmation(event, {{language.id}})" class="crud-delete-btn hide">Delete</a>
+                    <a href="{% url 'update-skill-page' pk=language.pk %}" class="crud-edit-btn hide">Edit</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="skills-page-section">
+            <h4 class="skills-page-section-heading">Technologies</h4>
+            <div class="skill-page-section-content">
+                {% for technology in all_technologies %}
+                <div class="individual-skill">
+                    <img src="{{ technology.image.url }}" class="skill-logo">
+                    <p class="skill-name">{{ technology.name }}</p>
+                    <a onclick="skillDeleteConfirmation(event, {{technology.id}})" class="crud-delete-btn hide">Delete</a>
+                    <a href="{% url 'update-skill-page' pk=technology.pk %}" class="crud-edit-btn hide">Edit</a>
+                </div>
+                {% endfor %}
+              </div>
+        </div>
+
+        <div class="crud-page-contorl-button-container">
+        <a href="{% url 'create-skill-page' %}"><img src="{% static 'icons/new_icon.svg' %}" class="crud-page-contorl-button"></a>
+        <img src="{% static 'icons/delete_icon.svg' %}" class="crud-page-contorl-button" onclick="toggle_all_btn('crud-delete-btn')">
+        <img src="{% static 'icons/edit_icon.svg' %}" class="crud-page-contorl-button" onclick="toggle_all_btn('crud-edit-btn')">
+        </div>
+
+    </div>
+</div>
+
+<script>
+/*
+These variables are needed in the JavaScript file "app.js" to initiate and confirm the deletion of a Skill object.
+Django does not support templating variables in standalone JavaScript files, therefore, variables from the server
+must be rendered into script tags within the html file and then referenced in app.js.
+*/
+let xBtn_url = "{% static 'icons/x_icon.svg' %}"
+/*
+The skillDeleteUrl is spliced because the route requires a URL parameter and omitting a parameter will throw an error.
+To solve this, we pass "1" to the "pk" it is expecting anf then spice the string to cut the parameter out.
+*/
+let skillDeleteUrl = "{% url 'delete-skill-page' pk=1%}".slice(0, -2)
+</script>
+{% endblock content %}

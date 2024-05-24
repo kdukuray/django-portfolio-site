@@ -1,0 +1,1211 @@
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles for Entire Website */
+
+@font-face {
+    font-family: interfont;
+    src: url({% static 'fonts/Inter_font.ttf' %});
+}
+
+*{
+    margin: 0;
+    font-family: interfont, sans-serif;
+    color: rgb(211, 211, 211);
+}
+
+textarea{
+    padding: 8px 9px;
+}
+
+.page-heading{
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 50px;
+    text-align: center;
+}
+
+body{
+    background-color: #111111;
+    background-image: linear-gradient(180deg, #111111, #222222, #333333,
+#222222, #111111);
+    background-size: cover;
+    min-height: 100vh;
+}
+
+input[type="file"]::-webkit-file-upload-button{
+    height: 37px;
+    background-color: #ffd700;
+    border: none;
+}
+input[type="file"]{
+    padding: 0px;
+}
+
+select{
+    width: 200px;
+    height: 40px;
+    font-size: 25px;
+    border: 1px solid;
+    border-color: #ffd700;
+    margin-top: 10px;
+    color: white;
+    opacity: 75%;
+    background-color: #222222;
+}
+
+input, textarea{
+    background-color: #222222;
+}
+
+a{
+    color: gold;
+    text-decoration: underline
+}
+
+/* End of Styles for Entire Website */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles that Span Multiple Pages and Sections */
+
+
+
+#login-page-content, #logout-page-content, #upload-image-page-content,
+#page-not-found-page, #create-skill-page-content, #upload-image-page-content
+#create-education-page-content{
+    padding-top: 100px;
+    position: relative;
+    min-height: 100vh;
+}
+
+.login-page-form-container, .logout-page-form-container,
+.upload-image-page-form-container, .create-skill-page-form-container, .upload-image-page-form-container,
+.create-education-page-form-container {
+    display: block;
+    display: block;
+    margin: auto;
+    width: 650px;
+    margin-top: 30px;
+    border: 1px solid #ffd700;
+    border-radius: 5px;
+    padding: 30px 20px;
+}
+
+.login-page-form-container form, .logout-page-form-container form,
+.upload-image-page-form-container form, .create-skill-page-form-container
+form, .create-education-page-form-container form, .upload-image-page-form-container form{
+    padding: 60px 30px;
+}
+
+#login-page-content label, #upload-image-page-content label,
+#create-skill-page-content label, #create-education-page-content label, #upload-image-page-content label{
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 25px;
+    width: 130px;
+    display: inline-block;
+}
+
+#upload-image-page-content label, #create-skill-page-content label, #upload-skill-page-content label,
+#create-education-page-content label{
+    width: auto;
+}
+
+#login-page-content input, #upload-image-page-content input,
+#create-skill-page-content input, #create-education-page-content input, #upload-image-page-content input{
+    width: 300px;
+    height: 37px;
+    font-size: 18px;
+    border: 1px solid;
+    border-color: #ffd700;
+    margin-top: 10px;
+    color: white;
+    opacity: 75%;
+}
+
+#login-page-content button, #logout-page-content button,
+#upload-image-page-content button, #create-skill-page-content button, #upload-image-page-content button,
+#create-education-page-content button{
+    margin: auto;
+    /* difference */
+    margin-top: 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    display: block;
+    width: 200px;
+    height: 60px;
+    background-color: #222222;
+    border-color: #ffd700;
+    border: 1px solid;
+    color: #ffd700;
+    transition: 0.4s;
+}
+
+#login-page-content button:hover, #logout-page-content button:hover,
+#upload-image-page-content button:hover, #create-skill-page-content
+button:hover, #create-education-page-content button:hover, #upload-page-content button:hover{
+    color: #111111;
+    background-color: #ffd700;
+}
+
+
+#create-education-page-content input, #upload-image-page-content input,
+#create-skill-page-content input, #upload-image-page-content input{
+    width: 400px;
+    height: 37px;
+    font-size: 18px;
+}
+
+
+.individual-post, .individual-message{
+    position: relative;
+    padding: 20px 50px;
+    transition: 0.4s;
+    height: 140px;
+    border-bottom: 1px solid #D2D7DF;
+    margin: 0px 100px;
+}
+
+.individual-post:hover, .individual-message:hover{
+    border-bottom: 1px solid #ffd700;
+ }
+
+.individual-post:hover .post-arrow-icon, .individual-message:hover
+.post-arrow-icon{
+    left: 100%;
+ }
+
+
+#single-post-page-content, .single-post-page-content,
+#single-message-page-content, .single-message-page-content{
+    margin: 40px;
+    padding-top: 100px;
+    padding-left: 18%;
+    padding-right: 18%;
+}
+
+
+.create-post-page-section button, .update-about-page-section button{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    width: 100px;
+    height: 60px;
+    background-color: #222222;
+    border-color: #ffd700;
+    border: 1px solid;
+    color: #ffd700;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+
+.create-post-page-section button:hover, .update-about-page-section
+button:hover{
+    color: #111111;
+    background-color: #ffd700;
+    cursor: pointer;
+}
+
+.create-post-page-section button:nth-child(odd),
+.update-about-page-section button:nth-child(odd){
+    top: 300px;
+
+}
+
+.create-post-page-section button:nth-child(even),
+.update-about-page-section button:nth-child(even){
+    top: 400px;
+
+}
+
+.upload-image-page-content form, .create-skill-page-content form, .upload-image-page-content form,
+.create-education-page-content form{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.create-post-page-section label, .update-about-page-section label{
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.create-post-page-section input, .update-about-page-section input{
+    width: 300px;
+    height: 37px;
+    font-size: 18px;
+    border: 1px solid;
+    border-color: #ffd700;
+    margin-top: 10px;
+    color: white;
+    opacity: 75%;
+}
+
+.skill-deletion-confirmation, .education-deletion-confirmation,
+.post-deletion-confirmation{
+    position: fixed;
+    height: 300px;
+    width: 400px;
+    border: 2px solid gold;
+    opacity: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+
+/* End of Styles that Span Multiple Pages and Section  */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles for Navigation Bar */
+.navbar{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: #111111;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+}
+.navbar-item, .navbar-item a{
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(212, 212, 212);
+    transition: 0.2s;
+}
+
+.navbar-item:hover a{
+    border-bottom: solid 4px #ffaf00;
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#navbar-homelogo{
+    height: 47px;
+}
+
+.half-nav{
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin-right: 60px;
+}
+
+/* End of Styles for Navigation Bar */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles for Contact Pages */
+.contact-page-heading{
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    opacity: 75%;
+}
+
+#contact-page-content{
+    padding-top: 70px;
+    position: relative;
+    margin-top: 10px;
+}
+
+.contact-form-container{
+    display: block;
+    margin: auto;
+    width: 650px;
+    margin-top: 30px;
+}
+
+.contact-form{
+    width: 100%;
+}
+
+input{
+    padding: 0px 5px;
+}
+
+.contact-form-input-strip{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.contact-form textarea{
+    height: 18em;
+    width: 100%;
+    font-size: 18px;
+    border: 1px solid;
+    border-color: #ffd700;
+    margin-top: 10px;
+    color: white;
+    background-color: #222222;
+
+}
+
+.contact-form label{
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 25px;
+}
+
+.contact-form input{
+    width: 300px;
+    height: 37px;
+    font-size: 18px;
+    border: 1px solid;
+    border-color: #ffd700;
+    margin-top: 10px;
+    color: white;
+}
+
+.contact-form-submit{
+    margin: auto;
+    margin-top: 15px;
+    font-size: 18px;
+    border-radius: 30px;
+    display: block;
+    width: 200px;
+    height: 60px;
+    background-color: #222222;
+    border-color: #ffd700;
+    border: 1px solid;
+    color: #ffd700;
+    transition: 0.4s;
+}
+
+.contact-form-submit:hover{
+    color: #111111;
+    background-color: #ffd700;
+    cursor: pointer;
+}
+
+/* End of Styles for Contact Pages */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles for Education Pages */
+#education-page-content, .education-page-content{
+    margin-left: 100px;
+    padding-top: 70px;
+    margin-top: 10px;
+}
+
+.education-section-item{
+    width: 650px;
+    border: 1px solid #ffd700;
+    display: block;
+    margin: 25px auto;
+    padding: 30px;
+    border-radius: 5px;
+    transition: 0.4s;
+    color: white;
+    position: relative;
+}
+.education-section-item .education-section-item-description{
+    opacity: 75%;
+}
+
+.education-section-item-heading{
+    font-size: 20px;
+    font-weight: bolder;
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.education-section-item-year{
+    font-size: 13px;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+
+.education-section-item:hover{
+    box-shadow: 1px 1px 8px #ffaf00;
+}
+
+.education-section-horizontal-bar{
+    border-left: 3px solid #ffd700;
+    margin-right: 600px;
+    transition: 1s;
+}
+
+.education-section-item-square{
+    width: 15px;
+    height: 15px;
+    background-color: #ffaf00;
+    border-radius: 50%;
+    position: relative;
+    right: 53px;
+    bottom: 32px;
+    z-index: 1;
+}
+.create-education-page-content textarea{
+    height: 14em;
+    width: 400px;
+    color: white;
+    opacity: 75%;
+    font-size: 18px;
+    border-color: #ffd700;
+
+}
+
+/* End of Styles for Education Pages */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles for Skills Pages */
+.skills-page-content, #skills-page-content{
+    margin: 0px 40px;
+    padding-top: 70px;
+    margin-top: 10px;
+}
+
+#all-skills-page-content{
+    padding-top: 100px;
+}
+
+.skills-page-section-container{
+    display: flex;
+    justify-content: space-between;
+    transition: 1s;
+}
+
+.skills-page-section{
+    width: 50%;
+    padding: 40px;
+}
+
+.skills-page-section-heading{
+    font-size: 30px;
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+.skills-page-section-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.individual-skill{
+    position: relative;
+    border: 1px solid #ffd700;
+    padding: 35px;
+    border-radius: 4px;
+    width: 100px;
+    display: inline-block;
+    margin: 10px;
+    transition: 0.4s;
+}
+
+.individual-skill:hover{
+    box-shadow: 1px 1px 8px #ffaf00;
+ }
+
+.skill-logo{
+    height: 100px;
+    border-radius: 50%;
+}
+
+.skill-name{
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    opacity: 75%;
+}
+
+.create-skill-page-content .select-input, .upload-image-page-content select-input{
+    width: 200px;
+    height: 37px;
+    font-size: 18px;
+    border: 1px solid;
+    border-color: #ffd700;
+    margin-top: 10px;
+    color: white;
+    opacity: 75%;
+}
+
+/* End of Styles for Skills Pages */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles for About Pages */
+.about-page-content, #about-page-content{
+    margin: 0px 60px;
+    padding-top: 75px;
+}
+
+.about-page-section-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-page-section{
+    padding: 20px;
+    width: 50%;
+}
+
+.about-page-section p{
+    padding: 0px 10px;
+    margin-top: 20px;
+    color: white;
+    opacity: 75%;
+    text-align: justify;
+}
+
+.about-page-section p:nth-child(2){
+    margin-left: 40px;
+}
+
+#about-tags{
+    font-weight: bolder;
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 100%;
+}
+
+.update-about-page-section {
+    color: white;
+    border-right: 1px solid black;
+}
+
+.update-about-page-section textarea{
+    height: 20em;
+
+}
+
+.update-about-page-section input{
+    width: 330px;
+    height: 37px;
+    font-size: 18px;
+}
+
+.about-description{
+    font-size: 18px;
+}
+
+.about-page-img{
+    height: 400px;
+    margin: auto;
+    display: block;
+    margin-top: 120px;
+    border-radius: 5px;
+
+}
+
+.update-about-section{
+    padding: 40px;
+
+}
+
+.update-about-section p{
+    padding: 0px 20px;
+    color: white;
+    opacity: 75%;
+    text-align: justify;
+}
+
+/* End Styles for About Pages */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles for All Posts Pages (Blogs & Projects) */
+
+.post-page-content, #post-page-content, .upload-image-page-content {
+    padding-top: 80px;
+}
+.all-message-page-content{
+    padding-top: 100px;
+}
+
+.individual-post-heading{
+    font-size: 30px;
+    margin-bottom: 10px;
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.individual-post-preview{
+    color: white;
+    opacity: 75%;
+    padding-right: 100px;
+}
+
+.individual-post-date{
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 20px;
+}
+
+.post-arrow-icon{
+    height: 30px;
+    position: relative;
+    left: 97%;
+    bottom: 40%;
+    transition: 0.4s;
+}
+
+.create-post-page-section .select-input{
+    width: 100px;
+    height: 37px;
+    font-size: 18px;
+    border: 1px solid;
+    border-color: #ffd700;
+    margin-top: 10px;
+    color: white;
+    opacity: 75%;
+}
+
+.create-post-page-section #single-post-page-content{
+    margin: 0px;
+    padding-top: 0px;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 0%;
+    font-size: smaller;
+}
+
+.create-post-page-section .single-post-page-content img{
+    height: 300px;
+}
+
+/* End of Styles for All Post Pages (Blogs & Projects) */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles for Single Post Pages (Blogs & Projects) */
+
+.quote{
+    display: block;
+    padding: 70px;
+    font-size: 25px;
+    font-style: italic;
+    background-color: #333333;
+    border-radius: 5px;
+    color: #ffaf00;
+    border-left: 5px solid  #ffaf00;
+}
+
+.single-post-page-content h1{
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.single-post-page-content img{
+    height: 400px;
+    border-radius: 5px;
+    margin: auto;
+    display: block;
+}
+
+.single-post-page-content sub{
+    display: block;
+    text-align: center;
+    color: white;
+    opacity: 75%;
+}
+
+.single-post-page-content p, .message-content{
+    margin: 25px 0px;
+    font-size: 22px;
+    color: white;
+    opacity: 75%;
+    line-height: 40px;
+    text-align: justify;
+}
+
+.single-post-page-content h4{
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 30px;
+    margin-bottom: 20px;
+
+}
+
+.single-post-page-content pre{
+    border-left: 5px solid  #ffaf00;
+    border-radius: 5px;
+
+}
+
+.single-post-page-content pre code{
+    font-size: 19px;
+}
+
+.single-post-page-content hr{
+    margin: 20px 0px;
+}
+
+.single-post-page-content li{
+    font-size: 22px;
+    color: white;
+    opacity: 75%;
+    line-height: 40px;
+}
+/* End of Styles for Single Post Pages (Blogs & Projects)*/
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles for Extras */
+
+.loading-spinner{
+    display: none;
+    height: 150px;
+    width: 150px;
+    border: 10px solid;
+    border-top: 5px solid #ffaf00;
+    border-bottom: 5px solid #ffd700;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+    border-radius: 50%;
+
+    animation: spin;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    animation-timing-function: ease-in-out;
+
+    position: absolute;
+    left: 45%;
+    top: 40%;
+
+    transition: 0.9s;
+
+}
+
+@keyframes spin {
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+
+.message-status{
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40%;
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+
+#admin-dashboard-pop-up{
+    height: 110px;
+    width: 200px;
+    position: absolute;
+    left: 90px;
+    bottom: 100%;
+    transform: translateY(130%);
+    border-radius: 10px;
+    border: 2px solid #ffd700;
+    background-color: #444444;
+    padding: 5px;
+
+}
+
+#admin-dashboard-pop-up p {
+    padding: 5px;
+    margin-left: 10px;
+}
+
+#admin-dashboard-pop-up a{
+    text-decoration: none;
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hide{
+    display: none;
+}
+
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    height:750px;
+    width: 60px;
+    top: 50px;
+    background-color: #111111;
+}
+.side-bar img{
+    height: 35px;
+    cursor: pointer;
+}
+
+
+.hidden{
+    min-height: 100vh;
+    opacity: 0%;
+    transition: 0.7s;
+    filter: blur(5px);
+    transform: translateX(-4%);
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.backdrop{
+    opacity: 5%;
+    filter: blur(5px);
+    z-index: 1;
+
+}
+.crud-delete-btn, .crud-edit-btn{
+    text-decoration: none;
+    color: white;
+    padding: 3px 20px;
+    border-radius: 5px;
+    background-color: crimson;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 115%);
+    transition: 0.6s;
+    width: 65px;
+    text-align: center;
+    cursor: pointer;
+}
+.crud-edit-btn{
+    background-color: royalblue;
+}
+
+.crud-page-contorl-button-container{
+    height: 120px;
+    padding: 10px;
+    position: absolute;
+    bottom: 70%;
+    left: 80%;
+}
+
+.crud-page-contorl-button{
+    height: 35px;
+}
+
+hr{
+    margin: 0px 40px;
+}
+
+/* End of Styles for Extras */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles for Messages Pages */
+.message-control-btn-container{
+    display: flex;
+}
+
+.message-control-btn-container img{
+    height: 40px;
+    margin: 0px 10px;
+
+}
+
+.message-sender-detail{
+        background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 100%;
+        margin-bottom: 10px;
+        font-size: 20px;
+}
+
+/* End of Styles for messages page */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles for All Images Page */
+.single-image-details-container{
+    border-bottom: 1px solid #D2D7DF;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    transition: 0.5s;
+}
+
+.single-image-details-container:hover{
+    border-bottom: 1px solid #ffaf00;
+}
+
+.single-image-photo{
+    display: inline;
+    border-radius: 5px;
+    height: 200px;
+}
+.single-image-details{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.single-image-details p{
+    margin-bottom: 5px;
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+.img-url{
+    cursor: pointer;
+}
+/* End of Styles for All Images Page */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles for Pagination */
+
+
+
+.pagination{
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 25px 0px;
+
+    }
+
+.pagination-arrows{
+    height: 25px;
+
+    }
+
+.pagination-arrow-link{
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+
+.pagination-current-page{
+}
+
+/* End of Styles for Pagination */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* Styles that should override other styles */
+.royal-gold{
+    background-image: linear-gradient(45deg, #ffd700, #ffaf00);
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 100%;
+}
+
+.post-deletion-confirmation{
+    height: 200px;
+}
+
+.post-deletion-confirmation p{
+    margin-bottom: 100px;
+}
+
+.education-deletion-confirmation{
+    width: 600px;
+}
+
+.education-deletion-confirmation .education-section-item{
+    width: 450px;
+    padding: 10px;
+}
+
+.skill-deletion-confirmation button, .education-deletion-confirmation
+button, .post-deletion-confirmation button{
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    text-align: center;
+    background-color: crimson;
+    color: white;
+    padding: 3px 20px;
+    cursor: pointer;
+}
+
+.cancel-skill-delete-confirmation-btn,
+.cancel-education-delete-confirmation-btn,
+.cancel-post-delete-confirmation-btn,
+.cancel-message-delete-confirmation-btn{
+    transition: 1s;
+    height: 25px;
+    position: absolute;
+    right: 90%;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.post-page-content a {
+    text-decoration: none;
+}
+
+.all-message-page-content a {
+    text-decoration: none;
+}
+/*  Styles for Create Post Pages (Override Styles) */
+.create-post-page-content, .update-about-page-content{
+    margin: 50px;
+    padding-top: 100px;
+}
+
+.create-post-page, .update-about-page{
+    display: flex;
+    justify-content: space-between;
+}
+
+.create-post-page-section, .update-about-page-section{
+    width: 50%;
+    height: auto;
+    position: relative;
+}
+
+.create-post-page-section form, .update-about-page-section form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-post-page-section textarea, .update-about-page-section textarea{
+    height: 35em;
+    width: 103%;
+    font-size: 18px;
+    border: 1px solid;
+    border-color: #ffd700;
+    margin-top: 10px;
+    color: white;
+    opacity: 75%;
+    margin-right: 9%;
+    padding: 8px 9px;
+}
+
+/* End of Styles that should override other styles */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+

@@ -1,0 +1,7 @@
+{% extends 'home/base.html' %}
+{% block content %}
+<div id="login-page-content" class="login-page-content" style="height: 100vh">
+    <h3 class="page-heading">You have been Logged out successfully!</h3>
+    <p style="text-align: center; margin-left: 25%; margin-top: 20px"><a href="{% url 'login-page' %}">Login</a></p>
+</div>
+{% endblock content %}

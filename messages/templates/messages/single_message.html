@@ -1,0 +1,31 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+<div id="single-message-page-content" class="single-message-page-content hidden">
+    <form id="csrf-token-container">
+        {% csrf_token %}
+    </form>
+    <h3 class="message-sender-detail">Sender Name: {{message.sender_name}}</h3>
+        <h3 class="message-sender-detail">Sender Email: {{message.sender_email}}</h3>
+    <h3 class="message-sender-detail">Sent Date: {{message.sent_date | date:"Y-m-d H:i:s"}}</h3>
+        <p class="message-content">{{message.content}}</p>
+        <div class="message-control-btn-container">
+            <a href="mailto: {{message.sender_email}}"><img src="{% static 'icons/reply_icon.svg' %}"></a>
+            <a onclick="messageDeleteConfirmation(event, {{message.id}})"><img src="{% static 'icons/delete_icon.svg' %}"></a>
+        </div>
+</div>
+<script>
+/*
+These variables are needed in the JavaScript file "app.js" to initiate and confirm the deletion of a Message object.
+Django does not support templating variables in standalone JavaScript files, therefore, variables from the server
+must be rendered into script tags within the html file and then referenced in app.js.
+*/
+let xBtn_url = "{% static 'icons/x_icon.svg' %}"
+/*
+The messageDeleteUrl is spliced because the route requires a URL parameter and omitting a parameter will throw an error.
+To solve this, we pass "1" to the "pk" it is expecting anf then spice the string to cut the parameter out.
+*/
+let messageDeleteUrl = "{% url 'delete-message-page' pk=1%}".slice(0, -2)
+</script>
+{% endblock content %}

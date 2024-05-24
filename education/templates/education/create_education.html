@@ -1,0 +1,13 @@
+{% extends "home/base.html" %}
+{% block content %}
+ <div id="create-education-page-content" class="create-education-page-content hidden">
+    <h3 class="page-heading">Create Education</h3>
+    <div class="create-education-page-form-container">
+        <form method="POST">
+            {{ form }}
+            {% csrf_token %}
+            <button>Submit</button>
+        </form>
+    </div>
+ </div>
+{% endblock content %}

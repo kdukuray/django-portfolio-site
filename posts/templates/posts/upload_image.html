@@ -1,0 +1,13 @@
+{% extends 'home/base.html' %}
+{% block content %}
+<div id="upload-image-page-content" class="upload-page-content hidden">
+    <h3 class="page-heading">Upload new Image </h3>
+    <div class="upload-image-page-form-container">
+        <form method="POST" enctype="multipart/form-data">
+            {{ form }}
+            {% csrf_token %}
+            <button>Upload</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+<div class="update-about-page-content hidden">
+    <div class="update-about-page">
+        <div class="update-about-page-section">
+            <form method="POST" class="update_about_page_form">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <button>Submit</button>
+            </form>
+        </div>
+        <div class="update-about-page-section">
+            <div class="update-about-section">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'javascript/showdown.js' %}" defer></script>
+<script defer>
+/*
+This script updates the preview window as you update the "About me" section.
+On the initial load, the input is put into paragraph tags for styling purposes.
+Subsequent updates will grab the contents of the textarea and convert it from markdown to HTML,
+thereby enclosing it in the paragraph tags that are needed to style it.
+*/
+let preview = document.querySelector(".update-about-section");
+let about_me_text_input = document.querySelector(".update_about_page_form textarea");
+
+preview.innerHTML = "<p>" + about_me_text_input.value + "</p>";
+about_me_text_input.addEventListener("input", () => {renderHtmlAboutPage('.update-about-section')});
+</script>
+{% endblock content %}

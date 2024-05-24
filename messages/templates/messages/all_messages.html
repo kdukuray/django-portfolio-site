@@ -1,0 +1,35 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="all-message-page-content hidden">
+    <h1 class="page-heading">All Messages</h1>
+    {% if all_messages %}
+    {% for message in all_messages %}
+    <a href="{% url 'single-message-page' pk=message.id %}">
+    <div class="individual-message">
+        <h4 class="individual-post-heading">From: {{ message.sender_email }}</h4>
+        <p class="individual-post-preview">{{ message.content | truncatewords:40}}</p>
+        <p class="individual-post-date">Sent: {{message.sent_date | date:"Y-m-d H:i:s"}}</p>
+        <img src="{% static 'icons/arrow.svg' %}" class="post-arrow-icon">
+    </div>
+    </a>
+    {% endfor %}
+    {% else %}
+    <h3 class="page-heading">You have no Messages</h3>
+    {% endif %}
+</div>
+<div class="pagination">
+
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}" class="pagination-arrow-link"> <img src="{% static 'icons/previous-page.svg' %}" class="pagination-arrows"> </a>
+    {% endif %}
+
+    <span class="pagination-current-page">{{ page_obj.number }}</span>
+
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}" class="pagination-arrow-link"> <img src="{% static 'icons/next-page.svg' %}" class="pagination-arrows"> </a> </div>
+    {% endif %}
+
+</div>
+{% endblock content %}

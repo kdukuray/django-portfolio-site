@@ -1,0 +1,36 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="create-post-page-content hidden">
+    <div class="create-post-page">
+        <div class="create-post-page-section" style="border-right: 1px solid black ;">
+            <form class="create-post-form" method="POST">
+                {{ form }}
+                {% csrf_token %}
+                <button>Submit</button>
+            </form>
+        </div>
+        <div class="create-post-page-section">
+            <div id="single-post-page-content" class="single-post-page-content"></div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'javascript/showdown.js' %}" defer></script>
+<script src="{% static 'javascript/prism.js' %}" defer></script>
+<script defer>
+/*
+This script updates the preview window as you create a new post.
+On the initial load, the input is put into paragraph tags for styling purposes.
+Subsequent updates will grab the contents of the textarea and convert it from markdown to HTML,
+thereby enclosing it in the paragraph tags that are needed to style it.
+*/
+let preview = document.querySelector(".single-post-page-content");
+let postTextInput = document.querySelector(".create-post-form textarea");
+preview.innerHTML = "<p>" + postTextInput.value + "</p>";
+
+postTextInput.addEventListener("input", () => {renderHtml('.single-post-page-content')})
+document.querySelector("#id_title").addEventListener("input", () => renderHtml(".single-post-page-content"))
+
+</script>
+{% endblock content %}

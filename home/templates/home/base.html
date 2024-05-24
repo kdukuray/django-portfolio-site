@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/prism.css' %}">
+    <script src="{% static 'javascript/main.js' %}" defer></script>
+    <title>Kalelo's Site</title>
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            <li class="navbar-item"><a href="{% url 'home-page' %}"><img src="{% static 'icons/home_icon.png' %}" id="navbar-homelogo"></a></li>
+            <div class="half-nav">
+                <li class="navbar-item"><a href="{% url 'home-page' %}#about-page-content">About</a></li>
+                <li class="navbar-item"><a href="{% url 'home-page' %}#skills-page-content">Skills</a></li>
+                <li class="navbar-item"><a href="{% url 'home-page' %}#education-page-content">Education</a></li>
+                <li class="navbar-item"><a href="{% url 'home-page' %}#contact-page-content">Contact</a></li>
+                <li class="navbar-item"><a href="{% url 'all-posts-page' type='blog' %}">Blogs</a></li>
+                <li class="navbar-item"><a href="{% url 'all-posts-page' type='project' %}">Projects</a></li>
+            </div>
+        </ul>
+    </nav>
+    <div id="page-content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    {% if user.is_authenticated %}
+        <div class="side-bar">
+            <img title="Admin Dashboard" src="{% static 'icons/user.svg' %}" onclick="toggle_admin_pop_up()">
+            <a href="{% url 'update-about-page' pk=1 %}"><img title="Admin About Page" src="{% static 'icons/about_me_icon.svg' %}"></a>
+            <a href="{% url 'all-skills-page' %}"><img title="Admin Skills Page" src="{% static 'icons/skills_icon.svg' %}"></a>
+            <a href="{% url 'all-education-page' %}" ><img title="Admin Education Page" src="{% static 'icons/education_icon.svg' %}"></a>
+            <a href="{% url 'all-messages-page' %}"><img title="Admin Messages Page" src="{% static 'icons/messages_icon.svg' %}"></a>
+            <a href="{% url 'create-post-page' %}"><img title="Create New Post" src="{% static 'icons/create_post_icon.svg' %}"></a>
+            <div id="admin-dashboard-pop-up" class="hide">
+                <p><a href="{% url 'admin:index' %}">Admin Panel</a></p>
+                <p><a href="{% url 'all-images-page' %}">All Images</a></p>
+                <p><a href="{% url 'upload-image-page' %}">New Image</a></p>
+                <p><a href="{% url 'logout-confirmation-page' %}">Logout</a></p>
+            </div>
+        </div>
+    {% endif %}
+
+</body>
+</html>

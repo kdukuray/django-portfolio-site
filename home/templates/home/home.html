@@ -1,0 +1,97 @@
+{% extends "home/home_base.html" %}
+{& load extras %}
+{% block content %}
+<!-- Home has a separate base.html page because th links inside the Navigation Bar need to start with "#" for the scroll effect -->
+<!-- About Section -->
+<div id="about-page-content" class="hidden">
+    <div class="about-page-section-container">
+        <div class="about-page-section">
+            <p id="about-tags">&lt;about&gt;</p>
+            <p class="about-description">{{ about.content | safe}} </p>
+            <p id="about-tags">&lt;/about&gt;</p>
+        </div>
+        <div class="about-page-section">
+            <img src="{{ about.image.url }}" class="about-page-img">
+        </div>
+    </div>
+</div>
+
+<!-- Skills Section -->
+<div id="skills-page-content" class="hidden">
+    <h3 class="page-heading">Skills</h3>
+    <div class="skills-page-section-container">
+        <div class="skills-page-section">
+            <h4 class="skills-page-section-heading">Languages</h4>
+            <div class="skill-page-section-content">
+
+                {% for language in all_languages %}
+                <div class="individual-skill">
+                    <img src="{{ language.image.url }}" class="skill-logo">
+                    <p class="skill-name">{{ language.name }}</p>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div class="skills-page-section">
+            <h4 class="skills-page-section-heading">Technologies</h4>
+            <div class="skill-page-section-content">
+                {% for technology in all_technologies %}
+                <div class="individual-skill">
+                    <img src="{{ technology.image.url }}" class="skill-logo">
+                    <p class="skill-name">{{ technology.name }}</p>
+                </div>
+                {% endfor %}
+              </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Education Section -->
+<div id="education-page-content" class="hidden">
+    <h3 class="page-heading">Education</h3>
+
+    <div class="education-section-horizontal-bar">
+        {% for education in all_education %}
+        <div class="education-section-item">
+            <div class="education-section-item-square"></div>
+            <p class="education-section-item-heading">{{ education.title }}</p>
+            <p class="education-section-item-year">{{ education.year }}</p>
+            <p class="education-section-item-description">{{ education.content }}</p>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div id="contact-page-content" class="hidden">
+    <p class="contact-page-heading">Want to get in touch?</p>
+    <p class="contact-page-heading royal-blue">Contact me.</p>
+
+    <div class="contact-form-container">
+        <form class="contact-form" method="POST" action="{% url 'save-message-route' %}" onsubmit="submit_message_form(event)">
+            {% csrf_token %}
+            <div class="contact-form-input-strip">
+                <p>
+                    <label for="name">Name</label><br>
+                    <input type="text" name="name">
+                </p>
+                <p>
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email">
+                </p>
+            </div>
+            <p><label for="message">Message</label></p>
+            <textarea  name="message"></textarea>
+
+            <button class="contact-form-submit" name="submit" type="submit">Submit</button>
+        </form>
+        <div class="loading-spinner"></div>
+    </div>
+
+</div>
+
+{% endblock content %}
