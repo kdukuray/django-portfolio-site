@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: interfont;
-    src: url({% static 'fonts/Inter_font.ttf' %});
+    /*src: url({% static 'fonts/Inter_font.ttf' %});*/
 }
 
 *{
