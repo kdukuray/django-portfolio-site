@@ -2530,4 +2530,3 @@
         return a
     }) : "undefined" != typeof module && module.exports ? module.exports = a : this.showdown = a
 }).call(this);
-//# sourceMappingURL=showdown.min.js.map
