@@ -7,7 +7,7 @@
     <div class="about-page-section-container">
         <div class="about-page-section">
             <p id="about-tags">&lt;about&gt;</p>
-            <p class="about-description">{{ about.content | safe}} </p>
+            <p class="about-description">{{ about.content | mdconvrter | safe}} </p>
             <p id="about-tags">&lt;/about&gt;</p>
         </div>
         <div class="about-page-section">

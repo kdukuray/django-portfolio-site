@@ -29,7 +29,6 @@ class DeleteMessage(LoginRequiredMixin, DeleteView):
 def save_message(request):
     if request.method == "POST":
         new_message_form = MessageForm(request.POST)
-        print(request.POST)
         if new_message_form.is_valid():
             new_message_form.save()
             return HttpResponse(status=200)
